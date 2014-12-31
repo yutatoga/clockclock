@@ -1,3 +1,4 @@
+var fontSize;
 // JavaScript Document
 var ctx;
 
@@ -19,7 +20,8 @@ function setup(){
 	ctx = canvas.getContext('2d');
 	setInterval(draw, 30);
 	// AJUSTME: font size
-	ctx.font = "100px MyFont";
+	fontSize = 100;
+	ctx.font = fontSize+"px MyFont";
 }
 
 function draw(){
@@ -60,3 +62,21 @@ function draw(){
     }
 }
 
+document.onkeydown = function (e){
+	// for InternetExplorer
+	if (!e)	e = window.event;
+
+	// change font size
+	switch (event.keyIdentifier){
+		case 'Up':
+			fontSize++;
+			ctx.font = fontSize+"px MyFont";
+		break;
+		case 'Down':
+			fontSize--;
+			ctx.font = fontSize+"px MyFont";		
+		break;
+		default:
+		break;
+	}
+};

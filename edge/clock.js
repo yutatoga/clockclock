@@ -1,6 +1,6 @@
+var fontSize;
 // JavaScript Document
 var ctx;
-
 onload = function(){
 	setup();
 }
@@ -19,7 +19,8 @@ function setup(){
 	ctx = canvas.getContext('2d');
 	setInterval(draw, 30);
 	// AJUSTME: font size
-	ctx.font = "170px MyFont";
+	fontSize = 170;
+	ctx.font = fontSize+"px MyFont";
 }
 
 function draw(){
@@ -63,4 +64,23 @@ function draw(){
 	// ctx.fillText(Math.random(), Math.random()*clock.width, Math.random()*clock.height*4.0-clock.height*2.0);
  //    }
 }
+
+document.onkeydown = function (e){
+	// for InternetExplorer
+	if (!e)	e = window.event;
+
+	// change font size
+	switch (event.keyIdentifier){
+		case 'Up':
+			fontSize++;
+			ctx.font = fontSize+"px MyFont";
+		break;
+		case 'Down':
+			fontSize--;
+			ctx.font = fontSize+"px MyFont";		
+		break;
+		default:
+		break;
+	}
+};
 
