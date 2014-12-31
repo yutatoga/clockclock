@@ -1,0 +1,21 @@
+@font-face {
+	font-family: 'MyFont';
+	src: url(../font/digital-7_mono.ttf);
+}
+
+body{
+	margin: 0px;
+	padding: 0px;
+	position: relative;
+	font-family: MyFont;
+}
+
+body #clock{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	margin:0;
+	padding:0 
+}
+
+
