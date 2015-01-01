@@ -8,6 +8,7 @@ body{
 	padding: 0px;
 	position: relative;
 	font-family: MyFont;
+	background-color: #000;
 }
 
 body #clock{
