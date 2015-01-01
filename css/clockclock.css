@@ -3,14 +3,6 @@
 	src: url(../font/digital-7_mono.ttf);
 }
 
-body{
-	margin: 0px;
-	padding: 0px;
-	position: relative;
-	font-family: MyFont;
-	background-color: #000;
-}
-
 body #clock{
 	width: 100%;
 	height: 100%;
