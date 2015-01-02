@@ -1,4 +1,4 @@
-#red, #green, #blue {
+#backgroundRed, #backgroundGreen, #backgroundBlue, #backgroundNumberRed, #backgroundNumberGreen, #backgroundNumberBlue, #numberRed, #numberGreen, #numberBlue {
   float: left;
   clear: left;
   width: 80%;
@@ -6,9 +6,14 @@
   margin-left: 10%;
 }
 
-#red .ui-slider-range { background: #f00; }
-#red .ui-slider-handle { border-color: #f00; }
-#green .ui-slider-range { background: #0f0; }
-#green .ui-slider-handle { border-color: #0f0 }
-#blue .ui-slider-range { background: #00f; }
-#blue .ui-slider-handle { border-color: #00f; }
+#backgroundRed .ui-slider-range, #backgroundNumberRed .ui-slider-range, #numberRed .ui-slider-range { background: #f00; }
+#backgroundRed .ui-slider-handle, #backgroundNumberRed .ui-slider-handle, #numberRed .ui-slider-handle { border-color: #f00; }
+#backgroundGreen .ui-slider-range, #backgroundNumberGreen .ui-slider-range, #numberGreen .ui-slider-range { background: #0f0; }
+#backgroundGreen .ui-slider-handle, #backgroundNumberGreen .ui-slider-handle, #numberGreen .ui-slider-handle { border-color: #0f0 }
+#backgroundBlue .ui-slider-range, #backgroundNumberBlue .ui-slider-range, #numberBlue .ui-slider-range { background: #00f; }
+#backgroundBlue .ui-slider-handle, #backgroundNumberBlue .ui-slider-handle, #numberBlue .ui-slider-handle { border-color: #00f; }
+
+
+#backgroundNumberRed, #numberRed{
+  margin-top: 30px;
+}

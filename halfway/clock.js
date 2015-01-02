@@ -55,7 +55,7 @@ function draw(){
 	// ctx.fill();
 
     //表
-    ctx.fillStyle='#000'; 
+    ctx.fillStyle= numberColor; 
     ctx.textAlign="left";  
     for(i=0; i< 200; i++){
 	ctx.fillText(Math.random(), Math.random()*clock.width, Math.random()*clock.height*4.0-clock.height*2.0);

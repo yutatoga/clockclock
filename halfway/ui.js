@@ -12,29 +12,58 @@ function hexFromRGB(r, g, b) {
     });
     return hex.join( "" ).toUpperCase();
   }
-  function refresh() {
-    var red = $( "#red" ).slider( "value" ),
-      green = $( "#green" ).slider( "value" ),
-      blue = $( "#blue" ).slider( "value" ),
+  function refreshBackgroundColor() {
+    var red = $( "#backgroundRed" ).slider( "value" ),
+      green = $( "#backgroundGreen" ).slider( "value" ),
+      blue = $( "#backgroundBlue" ).slider( "value" ),
       hex = hexFromRGB( red, green, blue );
     $( "body" ).css( "background-color", "#" + hex );
   }
+  
+  function refreshNumberColor() {
+    var red = $( "#numberRed" ).slider( "value" ),
+      green = $( "#numberGreen" ).slider( "value" ),
+      blue = $( "#numberBlue" ).slider( "value" ),
+      hex = hexFromRGB( red, green, blue );
+      numberColor = "#"+hex;
+  }
 
   $(function() {
-    $( "#red, #green, #blue" ).slider({
+    $("#backgroundRed, #backgroundGreen, #backgroundBlue").slider({
       orientation: "horizontal",
       range: "min",
       max: 255,
       value: 127,
-      slide: refresh,
-      change: refresh
+      slide: refreshBackgroundColor,
+      change: refreshBackgroundColor
     });
-    $( "#red" ).slider( "value", 255 );
-    $( "#green" ).slider( "value", 255 );
-    $( "#blue" ).slider( "value", 255 );
-    $("#red").hide();
-    $("#green").hide();
-    $("#blue").hide();
+
+    $("#numberRed, #numberGreen, #numberBlue").slider({
+      orientation: "horizontal",
+      range: "min",
+      max: 255,
+      value: 127,
+      slide: refreshNumberColor,
+      change: refreshNumberColor
+    });
+
+
+    $("#backgroundRed").slider("value", 255);
+    $("#backgroundGreen").slider("value", 255);
+    $("#backgroundBlue").slider("value", 255);
+
+    $("#numberRed").slider("value", 0);
+    $("#numberGreen").slider("value", 0);
+    $("#numberBlue").slider("value", 0);
+    
+    $("#backgroundRed").hide();
+    $("#backgroundGreen").hide();
+    $("#backgroundBlue").hide();
+
+    $("#numberRed").hide();
+    $("#numberGreen").hide();
+    $("#numberBlue").hide();
+
   });
 
 $(document).keypress(function(e) {
@@ -54,13 +83,21 @@ function uiToggle(){
 	uiVisible = !uiVisible;
 	if(uiVisible){
 		document.body.style.cursor = 'default';
-		$("#red").show();
-		$("#green").show();
-		$("#blue").show();		
+		$("#backgroundRed").show();
+		$("#backgroundGreen").show();
+		$("#backgroundBlue").show();
+
+    $("#numberRed").show();
+    $("#numberGreen").show();
+    $("#numberBlue").show();  
 	}else{
 		document.body.style.cursor = 'none';
-		$("#red").hide();
-		$("#green").hide();
-		$("#blue").hide();
+		$("#backgroundRed").hide();
+		$("#backgroundGreen").hide();
+		$("#backgroundBlue").hide();
+
+    $("#numberRed").hide();
+    $("#numberGreen").hide();
+    $("#numberBlue").hide();
 	}
 };

@@ -1,4 +1,5 @@
 var fontSize;
+var backgroundNumberColor = "#222";
 // JavaScript Document
 var ctx;
 onload = function(){
@@ -50,9 +51,9 @@ function draw(){
 	// ADJUSTME: set color
 	ctx.textAlign="center";
 	ctx.textBaseline = 'middle';
-    ctx.fillStyle='#222';
+    ctx.fillStyle = backgroundNumberColor;
 	ctx.fillText("00:00:00", clock.width/2.0, clock.height/2.0);
-    ctx.fillStyle='#777';
+    ctx.fillStyle = numberColor;
 	ctx.fillText(("0" + hr).slice(-2) + ":" + ("0" + min).slice(-2) + ":" + ("0" + sec).slice(-2), clock.width/2.0, clock.height/2.0);
     ctx.closePath();
 	ctx.fill();
@@ -83,4 +84,3 @@ document.onkeydown = function (e){
 		break;
 	}
 };
-
